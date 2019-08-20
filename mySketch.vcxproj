@@ -193,6 +193,7 @@
     </None>
     <None Include="Data\uv_vis.frag" />
     <None Include="Data\uv_passthrough.vert" />
+    <None Include="texture.frag" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="E:\OpenFramework\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

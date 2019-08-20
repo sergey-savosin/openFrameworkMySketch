@@ -1,9 +1,6 @@
 #include "ofApp.h"
 
 //--------------------------------------------------------------
-ofMesh quad;
-ofShader shader;
-
 void ofApp::setup(){
 	quad.addVertex(glm::vec3(-1, -1, 0));
 	quad.addVertex(glm::vec3(-1, 1, 0));
@@ -23,7 +20,10 @@ void ofApp::setup(){
 	ofIndexType indices[6] = { 0, 1, 2, 2, 3, 0 };
 	quad.addIndices(indices, 6);
 
-	shader.load("uv_passthrough.vert", "uv_vis.frag");
+	shader.load("uv_passthrough.vert", "texture.frag");
+
+	ofDisableArbTex();
+	img.load("parrot.png");
 }
 
 //--------------------------------------------------------------
@@ -34,6 +34,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 	shader.begin();
+	shader.setUniformTexture("parrotTex", img, 0);
 	quad.draw();
 	shader.end();
 }
