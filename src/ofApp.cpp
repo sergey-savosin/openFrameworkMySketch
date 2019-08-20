@@ -1,19 +1,29 @@
 #include "ofApp.h"
 
 //--------------------------------------------------------------
-ofMesh triangle;
+ofMesh quad;
 ofShader shader;
 
 void ofApp::setup(){
-	triangle.addVertex(glm::vec3(-1.0f, 1.0f, 0.0f));
-	triangle.addVertex(glm::vec3(-1.0f, -1.0f, 0.0f));
-	triangle.addVertex(glm::vec3(1.0f, -1.0f, 0.0f));
+	quad.addVertex(glm::vec3(-1, -1, 0));
+	quad.addVertex(glm::vec3(-1, 1, 0));
+	quad.addVertex(glm::vec3(1, 1, 0));
+	quad.addVertex(glm::vec3(1, -1, 0));
 
-	triangle.addColor(ofFloatColor(1.0, 0.0, 0.0, 1.0));
-	triangle.addColor(ofFloatColor(0.0, 1.0, 0.0, 1.0));
-	triangle.addColor(ofFloatColor(0.0, 0.0, 1.0, 1.0));
+	quad.addColor(ofFloatColor(1, 0, 0, 1));
+	quad.addColor(ofFloatColor(0, 1, 0, 1));
+	quad.addColor(ofFloatColor(0, 0, 1, 1));
+	quad.addColor(ofFloatColor(1, 1, 1, 1)); //white
 
-	shader.load("first_vertex.vert", "first_fragment.frag");
+	quad.addTexCoord(glm::vec2(0, 1));
+	quad.addTexCoord(glm::vec2(0, 0));
+	quad.addTexCoord(glm::vec2(1, 0));
+	quad.addTexCoord(glm::vec2(1, 1));
+
+	ofIndexType indices[6] = { 0, 1, 2, 2, 3, 0 };
+	quad.addIndices(indices, 6);
+
+	shader.load("uv_passthrough.vert", "uv_vis.frag");
 }
 
 //--------------------------------------------------------------
@@ -24,8 +34,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 	shader.begin();
-	shader.setUniform4f("fragCol", glm::vec4(0, 0.1, 1, 1));
-	triangle.draw();
+	quad.draw();
 	shader.end();
 }
 

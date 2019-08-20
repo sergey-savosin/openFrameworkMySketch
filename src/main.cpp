@@ -9,9 +9,7 @@ int main( ){
 	glSettings.setGLVersion(4, 1);
 	ofCreateWindow(glSettings);
 
-	// this kicks off the running of my app
-	// can be OF_WINDOW or OF_FULLSCREEN
-	// pass in width and height too:
+	printf("%s\n", glGetString(GL_VERSION));
 	ofRunApp(new ofApp());
 
 }

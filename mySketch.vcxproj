@@ -191,11 +191,16 @@
     <None Include="Data\first_vertex.vert">
       <DeploymentContent>true</DeploymentContent>
     </None>
+    <None Include="Data\uv_vis.frag" />
+    <None Include="Data\uv_passthrough.vert" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="E:\OpenFramework\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
       <Project>{5837595d-aca9-485c-8e76-729040ce4b0b}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Data\parrot.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ProjectExtensions>
