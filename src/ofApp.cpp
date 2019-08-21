@@ -24,6 +24,7 @@ void ofApp::setup(){
 
 	ofDisableArbTex();
 	img.load("parrot.png");
+	img.getTexture().setTextureWrap(GL_REPEAT, GL_REPEAT);
 }
 
 //--------------------------------------------------------------
@@ -35,6 +36,7 @@ void ofApp::update(){
 void ofApp::draw(){
 	shader.begin();
 	shader.setUniformTexture("parrotTex", img, 0);
+	shader.setUniform1f("time", ofGetElapsedTimef());
 	quad.draw();
 	shader.end();
 }

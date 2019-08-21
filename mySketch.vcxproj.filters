@@ -12,9 +12,6 @@
     <Filter Include="src">
       <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Data">
-      <UniqueIdentifier>{f7ae2dab-63ca-419b-b641-89f6d24f0491}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
@@ -22,25 +19,20 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Data\first_fragment.frag">
-      <Filter>Data</Filter>
-    </None>
-    <None Include="Data\first_vertex.vert">
-      <Filter>Data</Filter>
-    </None>
-    <None Include="Data\uv_passthrough.vert">
-      <Filter>Data</Filter>
-    </None>
-    <None Include="Data\uv_vis.frag">
-      <Filter>Data</Filter>
-    </None>
-    <None Include="texture.frag">
-      <Filter>Data</Filter>
-    </None>
+    <None Include="Data\first_vertex.vert" />
+    <None Include="Data\first_fragment.frag" />
+    <None Include="README.md" />
+    <None Include="Data\texture.frag" />
+    <None Include="Data\uv_passthrough.vert" />
+    <None Include="Data\uv_vis.frag" />
+    <None Include="bin\Data\uv_passthrough.vert" />
+    <None Include="bin\Data\uv_vis.frag" />
+    <None Include="bin\Data\first_fragment.frag" />
+    <None Include="bin\Data\first_vertex.vert" />
+    <None Include="bin\Data\texture.frag" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Data\parrot.png">
-      <Filter>Data</Filter>
-    </Image>
+    <Image Include="Data\parrot.png" />
+    <Image Include="bin\Data\parrot.png" />
   </ItemGroup>
 </Project>
